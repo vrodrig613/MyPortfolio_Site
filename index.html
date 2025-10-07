@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <header>
+
+    <!-- Header and Navigation -->
+    <header role="banner">
         <h1>My Portfolio</h1>
-        <nav>
+        <nav role="navigation" aria-label="Main Navigation">
             <ul>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -20,29 +21,34 @@
     </header>
 
     <!-- About Me Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <img src="images/profile.jpg" alt="My Profile Picture">
-        <p>Hello! My name is [Your Name], and I am a web developer passionate about building creative and functional websites.</p>
+    <section id="about" role="region" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Me</h2>
+        <img src="images/profile.jpg" alt="Profile picture of Vicente Rodriguez">
+        <p>Hello! My name is Vicente Rodriguez, and I am an aspiring IT Support Specialist and web developer passionate about creating accessible and functional websites.</p>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
+    <section id="projects" role="region" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Projects</h2>
         <p>Coming soon...</p>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: your.email@example.com</p>
+    <section id="contact" role="region" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact Me</h2>
+        <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
         <p>Connect with me:</p>
         <ul>
-            <li><a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></li>
-            <li><a href="https://github.com/yourgithub" target="_blank">GitHub</a></li>
+            <li><a href="https://linkedin.com/in/vicente-rodriguez" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/vrodrig613" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             <li><a href="resume.pdf" download>Download My Resume</a></li>
         </ul>
     </section>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p>&copy; 2025 Vicente Rodriguez. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
