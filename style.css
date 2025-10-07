@@ -27,6 +27,20 @@ nav ul li a {
     color: white;
     text-decoration: none;
 }
+/* Tablet View (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    body {
+        font-size: 18px;
+    }
+
+    img {
+        width: 140px;
+    }
+
+    section {
+        padding: 20px;
+    }
+}
 
 section {
     padding: 20px;
@@ -42,4 +56,5 @@ img {
 ul {
     list-style: none;
     padding: 0;
+
 }
