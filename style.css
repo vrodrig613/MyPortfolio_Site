@@ -27,20 +27,6 @@ nav ul li a {
     color: white;
     text-decoration: none;
 }
-/* Tablet View (768px - 1023px) */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    body {
-        font-size: 18px;
-    }
-
-    img {
-        width: 140px;
-    }
-
-    section {
-        padding: 20px;
-    }
-}
 
 section {
     padding: 20px;
@@ -56,5 +42,128 @@ img {
 ul {
     list-style: none;
     padding: 0;
+}
+/* Mobile View (Up to 767px) */
+@media screen and (max-width: 767px) {
+    body {
+        font-size: 16px;
+    }
+    
+    header {
+        text-align: center;
+        padding: 10px;
+    }
 
+    nav ul {
+        display: block;
+        text-align: center;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    img {
+        width: 120px;
+    }
+
+    section {
+        padding: 15px;
+    }
+}
+
+/* Tablet View (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    body {
+        font-size: 18px;
+    }
+
+    img {
+        width: 140px;
+    }
+
+    section {
+        padding: 20px;
+    }
+}
+/* Branding Colors */
+:root {
+    --primary-color: #DEE5F8;
+    --secondary-color: #A9B2CD;
+    --background-color: #5375CA;
+    --text-color: #291C14;
+    --accent-color: #4B5981;
+}
+body {
+    font-family: 'Tinos', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    letter-spacing: 0.2px;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--accent-color);
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    font-family: 'DM Serif Text', serif;
+    font-size: 2.2rem;
+    letter-spacing: 0.5px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: 'DM Serif Text', serif;
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.5rem;
+}
+
+/* Body Text & Paragraphs */
+p, li, a, button {
+    font-family: 'Tinos', serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Limit width for better readability */
+section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Smooth scrolling for internal links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Buttons */
+button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #c0392b;
 }
