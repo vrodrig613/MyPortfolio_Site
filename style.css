@@ -204,3 +204,46 @@ button {
 button:hover {
     background-color: #2980b9;
 }
+/* Default (Light Mode) */
+:root {
+    --background-color: #5375CA;
+    --text-color: #333;
+    --header-color: #4B5881;
+    --button-color: #3498db;
+    --button-text-color: white;
+}
+
+/* Dark Mode */
+.dark-mode {
+    --background-color: #121212;
+    --text-color: #f4f4f4;
+    --header-color: #1e1e1e;
+    --button-color: #ff9800;
+    --button-text-color: black;
+}
+
+/* Apply Theme Variables */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: var(--header-color);
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+button {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #ff5722;
+}
