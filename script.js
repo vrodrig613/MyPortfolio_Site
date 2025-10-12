@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     revealOnScroll(); // Trigger once on load
 
     /* --------------------------------
-       Contact Form Validation
+       Contact Form Validation + Submit
     -------------------------------- */
     const form = document.getElementById("contactForm");
     const nameInput = document.getElementById("name");
@@ -60,7 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const successMessage = document.getElementById("successMessage");
 
     form.addEventListener("submit", (event) => {
-        event.preventDefault();
+        event.preventDefault(); // stops browser's default reload
+
         let isValid = true;
 
         const validateField = (input, errorId, condition, message) => {
@@ -80,12 +81,25 @@ document.addEventListener("DOMContentLoaded", () => {
         validateField(messageInput, "messageError", messageInput.value.trim() !== "", "Message cannot be empty.");
 
         if (isValid) {
-            successMessage.style.display = "block";
-            setTimeout(() => {
-                successMessage.style.display = "none";
-                form.reset();
-                [nameInput, emailInput, messageInput].forEach(i => i.style.border = "");
-            }, 3000);
+            // Send to Formspree using fetch
+            fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                if (response.ok) {
+                    successMessage.style.display = "block";
+                    setTimeout(() => {
+                        successMessage.style.display = "none";
+                        form.reset();
+                        [nameInput, emailInput, messageInput].forEach(i => i.style.border = "");
+                    }, 3000);
+                } else {
+                    alert("Oops! There was a problem sending your message.");
+                }
+            })
+            .catch(() => alert("Network error. Please try again later."));
         }
     });
 
